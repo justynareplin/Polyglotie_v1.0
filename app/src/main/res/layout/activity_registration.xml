@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foregroundTint="#FAF7F7"
+    tools:context=".activities.RegistrationActivity">
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:fontFamily="@font/comfortaa_light"
+        android:hint="Enter your name"
+        android:inputType="textCapWords"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextEmail"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextEmail"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.256"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:fontFamily="@font/comfortaa_light"
+        android:hint="Enter Email"
+        android:inputType="textEmailAddress"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/registerPassword"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/registerPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName"
+        app:layout_constraintVertical_bias="0.024"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/registerPassword"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:fontFamily="@font/comfortaa_light"
+        android:hint="Enter your password"
+        android:inputType="textPassword"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/registerPassword2"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/registerPassword2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/registerPassword2"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:fontFamily="@font/comfortaa_light"
+        android:hint="Re-enter your password"
+        android:inputType="textPassword"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/acceptThermsCheckbox"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/acceptThermsCheckbox"
+        app:layout_constraintTop_toBottomOf="@+id/registerPassword"
+        app:layout_constraintVertical_bias="0.029" />
+
+    <Button
+        android:id="@+id/registrationBtn"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:fontFamily="@font/comfortaa_light"
+        android:shadowRadius="20"
+        android:text="@string/sign_up"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerPassword2"
+        app:layout_constraintVertical_bias="0.216" />
+
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.936"
+        app:srcCompat="?attr/actionModeCloseDrawable"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <CheckBox
+        android:id="@+id/acceptThermsCheckbox"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:fontFamily="@font/comfortaa_light"
+        android:text="I accept terms and agreements"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/registrationBtn"
+        app:layout_constraintEnd_toEndOf="@+id/registrationBtn"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/registrationBtn"
+        app:layout_constraintTop_toBottomOf="@+id/registerPassword2"
+        app:layout_constraintVertical_bias="0.428"
+        tools:ignore="TouchTargetSizeCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

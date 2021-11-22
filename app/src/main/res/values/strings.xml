@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Polyglotie</string>
+    <string name="mainImage">mainImage</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="sign_in"> SIGN IN</string>
+    <string name="please_click_back_again_to_exit">Please click back again to exit </string>
+    <string name="please_wait">Please wait</string>
+    )
 </resources>
