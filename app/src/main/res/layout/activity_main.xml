@@ -6,4 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
+    <Button
+        android:id="@+id/btnQuiz"
+        android:layout_width="253dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="232dp"
+        android:text="Quiz"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnFlashCards"
+        android:layout_width="257dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="32dp"
+        android:text="Flash Cards"
+        app:layout_constraintEnd_toEndOf="@+id/btnQuiz"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnQuiz"
+        app:layout_constraintTop_toBottomOf="@+id/btnQuiz" />
+
+    <Button
+        android:id="@+id/btnInsertWord"
+        android:layout_width="255dp"
+        android:layout_height="55dp"
+        android:text="Insert Words"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnFlashCards"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnFlashCards"
+        app:layout_constraintTop_toBottomOf="@+id/btnFlashCards"
+        app:layout_constraintVertical_bias="0.107" />
 </androidx.constraintlayout.widget.ConstraintLayout>
