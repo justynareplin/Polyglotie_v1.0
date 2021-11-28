@@ -6,15 +6,15 @@ object Constants {
     const val USERS: String = "users"
 
     fun getQuestions(): ArrayList<Question>{
-        val questionList = ArrayList<Question>()
 
+        val questionList = ArrayList<Question>()
         val que1 = Question(
             1,
-            "Wybierz slowo1",
-            "slowo1",
-            "slowo2",
-            "slowo3",
-            "slowo4",
+            "Pytanie nr 1",
+            "slowo1.1 ",
+            "slowo1.2",
+            "slowo1.3",
+            "slowo1.4",
             1)
         questionList.add(que1)
 
