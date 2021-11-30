@@ -11,10 +11,10 @@ object Constants {
         val que1 = Question(
             1,
             "Pytanie nr 1",
-            "slowo1.1 ",
-            "slowo1.2",
-            "slowo1.3",
-            "slowo1.4",
+            "slowo     1.1 ",
+            "slowo        1.2",
+            "slowo        1.3",
+            "slowo       1.4",
             1)
         questionList.add(que1)
 

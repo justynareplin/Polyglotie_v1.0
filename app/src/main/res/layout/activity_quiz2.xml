@@ -6,69 +6,77 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".activities.QuizActivity">
+    tools:context=".activities.QuizActivity2">
 
     <TextView
         android:id="@+id/textViewPickWord"
         android:layout_height="wrap_content"
         android:layout_width="200dp"
+        android:textColor="@color/purple"
         android:text="@string/pick_word"
         android:layout_marginBottom="20dp"
         android:layout_marginRight="50dp"
-        android:textColor="@color/purple"
         android:textStyle="bold"
         android:textSize="16dp"/>
 
     <TextView
         android:id = "@+id/textViewQuestion"
         android:layout_width="300dp"
+        android:textColor="@color/purple"
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:gravity="center"
         android:textSize="25dp" />
 
-    <TextView
-        android:id="@+id/textViewAnswer1"
+    <Button
+        android:id="@+id/btnAnswer1"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@drawable/option_border"
+        android:textColor="@color/light_grey"
+        android:background="@drawable/custom_button"
         android:gravity="center"
-        android:padding="8dp"
-        android:text="uiiuiu"
-        android:textSize="18dp" />
-    <TextView
-        android:id="@+id/textViewAnswer2"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:padding="8dp"
-        android:textSize="18dp"
-        android:background="@drawable/option_border" />
-    <TextView
-        android:id="@+id/textViewAnswer3"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:padding="8dp"
-        android:textSize="18dp"
-        android:background="@drawable/option_border"/>
-    <TextView
-        android:id="@+id/textViewAnswer4"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:padding="8dp"
-        android:textSize="18dp"
-        android:background="@drawable/option_border"/>
+        android:textSize="18dp"/>
 
     <Button
+        android:id="@+id/btnAnswer2"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="OK!"/>
+        android:backgroundTint="@color/white"
+        android:textColor="@color/light_grey"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textSize="18dp" />
+
+    <Button
+        android:id="@+id/btnAnswer3"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/light_grey"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textSize="18dp" />
+    <Button
+        android:id="@+id/btnAnswer4"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/light_grey"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textSize="18dp" />
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/purple"
+        android:textSize="18dp"/>
 
 </LinearLayout>
