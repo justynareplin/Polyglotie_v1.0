@@ -99,7 +99,6 @@ class QuizActivity2 : AppCompatActivity(){
                 3 -> btnAnswer3.setTextColor(Color.RED)
                 4 -> btnAnswer4.setTextColor(Color.RED)
             }
-
         }
 
         fun correctAnswer(currentPosition: Int){
