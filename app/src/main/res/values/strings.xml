@@ -3,13 +3,21 @@
     <string name="mainImage">mainImage</string>
     <string name="sign_up">SIGN UP</string>
     <string name="sign_in"> SIGN IN</string>
+
+    <!--Progress loading strings -->
     <string name="please_click_back_again_to_exit">Please click back again to exit </string>
     <string name="please_wait">Please wait</string>
+
+    <!-- Quiz activities strings -->
     <string name="pick_word">Pick the right word! </string>
     <string name="submit_answer">Submit</string>
-    <string name="greetings">Welcome, User!</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Main activity strings -->
+    <string name="greetings">Welcome, User!</string>
     <string name="profile_pic">Profile pic</string>
-    )
+    <string name="recent_decks">Recent decks</string>
+    <string name="categories">Categories</string>
+
 </resources>

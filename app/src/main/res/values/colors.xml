@@ -12,7 +12,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="light_grey">#6C6C6C </color>
+    <color name="light_grey2">#B9DADADA</color>
     <color name="green">#AB33D537</color>
     <color name="light_green">#AB98FA9B</color>
-    <color name="dark_grey">#1a1a1a</color>
+    <color name="dark_grey">#D51A1A1A</color>
 </resources>

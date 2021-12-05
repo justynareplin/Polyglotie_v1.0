@@ -4,17 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:focusable="auto"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".activities.MainActivity">
 
-    <include layout="@layout/activity_navbar"/>
+    <include layout="@layout/activity_navbar" />
 
+    <SearchView
+        android:layout_width="360dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/search_border"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/recent_decks"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="110dp"
+        android:textSize="@dimen/font_size"
+        android:textColor="@color/dark_grey"
+        />
     <Button
         android:id="@+id/btnQuiz"
         android:layout_width="@dimen/button_width"
         android:layout_height="@dimen/button_height"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="25dp"
         android:text="Quiz" />
 
     <Button
@@ -31,7 +48,7 @@
         android:layout_height="@dimen/button_height"
         android:layout_marginTop="@dimen/button_margin"
         android:gravity="center"
-        android:text="Insert Words"/>
+        android:text="Insert Words" />
 
     <Button
         android:id="@+id/btnProfile"
@@ -45,22 +62,32 @@
         android:id="@+id/flFragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="300dp"
+        android:layout_height="40dp"
         android:layout_marginTop="20dp"
-        android:layout_height="50dp"
-        app:defaultNavHost="true"
         android:background="@color/green"
         android:textColor="@color/purple_200"
+        app:defaultNavHost="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/categories"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="110dp"
+        android:textSize="@dimen/font_size"
+        android:textColor="@color/dark_grey"
         />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="360dp"
         android:layout_height="match_parent"
-        android:layout_marginTop="100dp"
         android:layout_marginStart="0dp"
-        app:menu="@menu/item_menu"
+        android:layout_marginTop="70dp"
         android:background="@drawable/round_corner"
-        app:itemIconTint="@drawable/item_selector"
         app:itemIconSize="30dp"
-        app:labelVisibilityMode="unlabeled"/>
+        app:itemIconTint="@drawable/item_selector"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/item_menu" />
+
 </LinearLayout>
