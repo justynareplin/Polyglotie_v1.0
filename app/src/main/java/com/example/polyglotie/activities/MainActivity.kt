@@ -38,15 +38,14 @@ class MainActivity : AppCompatActivity() {
         /*
         navigationView.setOnClickListener {
             println("item menuuuuuuuuuuuuuuu")}
+*/
+        btnFlashCards.setOnClickListener{
+            val intent= Intent(this, NavbarActivity::class.java)
+            startActivity(intent)
+            finish()
 
-        btnFlashCards.setOnClickListener{ supportFragmentManager.beginTransaction().apply{
-            replace(R.id.flFragment, homeFragment)
-
-            commit()
-            println("Home fragment")
         }
-        }
-
+/*
         btnInsertWord.setOnClickListener{ supportFragmentManager.beginTransaction().apply{
             replace(R.id.flFragment, learnFragment)
 

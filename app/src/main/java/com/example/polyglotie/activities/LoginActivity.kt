@@ -41,7 +41,6 @@ class LoginActivity : BaseActivity() {
                 Toast.makeText(this,
                     "Please eneter your password", Toast.LENGTH_LONG).show()
             }
-
                 showProgressDialog(resources.getString(R.string.please_wait))
                 val email: String = editTextSignInEmail.text.toString().trim{it <= ' '}
                 val password= editTextTextPassword.text.toString().trim{it <= ' '}
@@ -49,13 +48,11 @@ class LoginActivity : BaseActivity() {
                     .addOnCompleteListener(this) { task ->
                         hideProgressDialog()
                         if (task.isSuccessful) {
-                            // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success")
                             val user = auth.currentUser
                             startActivity(Intent(this, StartActivity::class.java))
                             // updateUI(user)
                         } else {
-                            // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.exception)
                             Toast.makeText(baseContext, "Authentication failed.",
                                 Toast.LENGTH_SHORT).show()
