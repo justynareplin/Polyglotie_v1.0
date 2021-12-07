@@ -37,7 +37,7 @@ class FirestoreClass {
     }
 
     fun signInUser(activity: Activity) {
-        println("bleeep")
+        println("test")
         mFireStore.collection(Constants.USERS)
             .document(getCurrentUserId())
             .get()
@@ -55,7 +55,6 @@ class FirestoreClass {
                     is ProfileActivity -> {
                         if (loggedInUser != null) {
                             activity.updateUserDetails(loggedInUser)
-                            println("profile blep")
                         }
                     }
                 }
