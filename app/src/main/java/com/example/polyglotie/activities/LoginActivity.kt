@@ -32,6 +32,7 @@ class LoginActivity : BaseActivity() {
             finish()
         }
 
+
         loginButton.setOnClickListener {
             if(editTextSignInEmail.text.isEmpty()){
                 Toast.makeText(this,
@@ -67,6 +68,10 @@ class LoginActivity : BaseActivity() {
     fun signInSuccess(user: User) {
         startActivity(Intent(this, MainActivity::class.java))
         finish()
+
+    }
+    fun cokolwiek(user: User){
+        println("ddddddd")
 
     }
 }

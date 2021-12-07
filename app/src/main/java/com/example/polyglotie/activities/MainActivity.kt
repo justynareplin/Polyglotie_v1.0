@@ -5,42 +5,46 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.bumptech.glide.Glide
 import com.example.polyglotie.R
+import com.example.polyglotie.firebase.FirestoreClass
 import com.example.polyglotie.fragments.HomeFragment
 import com.example.polyglotie.fragments.LearnFragment
 import com.example.polyglotie.fragments.Profile
 import com.example.polyglotie.fragments.StatsFragment
+import com.example.polyglotie.models.User
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btnQuiz : Button = findViewById(R.id.btnQuiz)
-        val btnFlashCards: Button=findViewById(R.id.btnFlashCards)
-        val btnInsertWord: Button=findViewById(R.id.btnInsertWord)
+        val btnQuiz: Button = findViewById(R.id.btnQuiz)
+        val btnFlashCards: Button = findViewById(R.id.btnFlashCards)
+        val btnInsertWord: Button = findViewById(R.id.btnInsertWord)
 
         /*Set fragments values */
-        val homeFragment = HomeFragment()
-        val learnFragment= LearnFragment()
+        /*val homeFragment = HomeFragment()
+        val learnFragment = LearnFragment()
         val statsFragment = StatsFragment()
-        val profileFragment = Profile()
+        val profileFragment = Profile()*/
 
-        val bottomNavigationView  = findViewById<BottomNavigationView >(R.id.bottom_navigation)
-        val navController= findNavController(R.id.flFragment)
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        val navController = findNavController(R.id.flFragment)
 
-        bottomNavigationView.setupWithNavController(navController)
+      //  bottomNavigationView.setupWithNavController(navController)
 
-        /*
-        navigationView.setOnClickListener {
-            println("item menuuuuuuuuuuuuuuu")}
-*/
-        btnFlashCards.setOnClickListener{
-            val intent= Intent(this, NavbarActivity::class.java)
+        FirestoreClass().signInUser(this)
+
+        btnFlashCards.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
             finish()
 
@@ -61,11 +65,28 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.flFragment)
         bottomNavigationView.setupWithNavController(navController
         )
-
+*/
         btnQuiz.setOnClickListener {
             val Intent = Intent(this, QuizActivity2::class.java)
             startActivity(Intent)
             finish()
-        }*/
+        }
+
     }
+/*
+    fun updateNavigationUserDetails(user: User) {
+
+        val userCircleImage: ImageView = findViewById(R.id.user_circle_image)
+        val tvUserName: TextView = findViewById(R.id.tv_username)
+
+        Glide
+            .with(this)
+            .load(user.image)
+            .centerCrop()
+            .placeholder(R.drawable.ic_user_place_holder)
+            .into(userCircleImage)
+
+        tvUserName.text = user.name
+    }*/
+
 }

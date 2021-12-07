@@ -11,6 +11,9 @@
     <!-- Quiz activities strings -->
     <string name="pick_word">Pick the right word! </string>
     <string name="submit_answer">Submit</string>
+    <string name="repeat">Repeat</string>
+    <string name="ok">OK!</string>
+
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -19,5 +22,6 @@
     <string name="profile_pic">Profile pic</string>
     <string name="recent_decks">Recent decks</string>
     <string name="categories">Categories</string>
+
 
 </resources>

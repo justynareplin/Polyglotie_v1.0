@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.example.polyglotie.R
 import com.example.polyglotie.utils.Constants
+import com.example.polyglotie.utils.Questions
 
 class QuizActivity : AppCompatActivity(){ // View.OnClickListener
 
@@ -31,7 +32,7 @@ class QuizActivity : AppCompatActivity(){ // View.OnClickListener
         textViewAnswer3.setOnClickListener(this)
         textViewAnswer4.setOnClickListener(this)
 */
-        mQuestionsList = Constants.getQuestions()
+         mQuestionsList = Questions.getQuestions()
         //setQuestions()
 
         fun setQuestions() {

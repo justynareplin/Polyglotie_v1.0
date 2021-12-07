@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Polyglotie">
         <activity
+            android:name=".activities.bottom"
+            android:exported="true" />
+        <activity
+            android:name=".activities.Navv"
+            android:exported="true" />
+        <activity
+            android:name=".activities.EnterWordsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.FlashCardsActivity"
+            android:exported="true" />
+        <activity
             android:name=".activities.ProfileActivity"
             android:exported="true" />
         <activity

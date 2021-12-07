@@ -5,18 +5,18 @@ import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.core.content.ContextCompat
 import com.example.polyglotie.R
 import com.example.polyglotie.utils.Constants
+import com.example.polyglotie.utils.Questions
 
 class QuizActivity2 : AppCompatActivity(){
 
     private var mSelectedOptionPosition: Int = 0
     private var gQuestionsList: ArrayList<Question>? = null //global question list
     var questionCurrentPosition = 0
+    var doubleClickedFavourites = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +29,9 @@ class QuizActivity2 : AppCompatActivity(){
         val btnAnswer4: Button = findViewById(R.id.btnAnswer4)
         val btnSubmit: Button = findViewById(R.id.btnSubmit)
 
-        gQuestionsList = Constants.getQuestions()
+        val btnFavourites: ImageButton = findViewById<ImageButton>(R.id.favourite_button)
+
+        gQuestionsList = Questions.getQuestions()
 
         fun setQuestions() {
 
@@ -60,11 +62,12 @@ class QuizActivity2 : AppCompatActivity(){
                     this, R.drawable.option_border)
             }
         }
+
         fun selectedOptionView(btn: Button, selectedAnswerNum: Int){
             setDefaultButtonView()
             mSelectedOptionPosition = selectedAnswerNum
 
-            btn.setTextColor(Color.parseColor("#0027C2")) // Set blue color on selected answer button
+            btn.setTextColor(Color.parseColor("#3a4bbd")) // Set blue color on selected answer button
            // btn.setBackgroundColor(Color.GREEN)
             println("selected option $mSelectedOptionPosition")
           /*  btn.background = ContextCompat.getDrawable(this,
@@ -84,6 +87,16 @@ class QuizActivity2 : AppCompatActivity(){
         }
         btnAnswer4.setOnClickListener {
             selectedOptionView(btnAnswer4,4)
+        }
+
+        btnFavourites.setOnClickListener{
+            doubleClickedFavourites++
+
+            if(doubleClickedFavourites==1) btnFavourites.setImageResource(R.drawable.ic_baseline_favorite)
+            else if(doubleClickedFavourites==2){
+                doubleClickedFavourites=0
+                btnFavourites.setImageResource(R.drawable.ic_baseline_favorite_border)
+            }
         }
 
         fun wrongAnswer(correctAnswer: Int, mSelectedOptionPosition :Int){
@@ -126,7 +139,7 @@ class QuizActivity2 : AppCompatActivity(){
                 btnAnswer4.isClickable=false
                 //After user has chose answer
                 val question = gQuestionsList!!.get(questionCurrentPosition)
-                if(question!!.answer != mSelectedOptionPosition){   //If answer is wrong
+                if(question.answer != mSelectedOptionPosition){   //If answer is wrong
                     wrongAnswer(question.answer, mSelectedOptionPosition )
                 }
                 else if(question.answer == mSelectedOptionPosition){    //If answer is correct

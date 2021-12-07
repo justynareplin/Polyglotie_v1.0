@@ -12,8 +12,8 @@
     <include layout="@layout/activity_navbar" />
 
     <SearchView
-        android:layout_width="360dp"
-        android:layout_height="55dp"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/search_border"
         />
@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="@string/recent_decks"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="25dp"
         android:layout_marginRight="110dp"
         android:textSize="@dimen/font_size"
         android:textColor="@color/dark_grey"
@@ -31,7 +31,7 @@
         android:id="@+id/btnQuiz"
         android:layout_width="@dimen/button_width"
         android:layout_height="@dimen/button_height"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:text="Quiz" />
 
     <Button
@@ -73,17 +73,27 @@
         android:layout_height="match_parent"
         android:text="@string/categories"
         android:layout_marginTop="35dp"
-        android:layout_marginRight="110dp"
+        android:layout_marginEnd="110dp"
         android:textSize="@dimen/font_size"
         android:textColor="@color/dark_grey"
         />
 
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="110dp"
+        android:textColor="@color/dark_grey"
+        android:textSize="@dimen/font_size" />
+
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="360dp"
-        android:layout_height="match_parent"
+        android:layout_height="50dp"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="14dp"
         android:background="@drawable/round_corner"
         app:itemIconSize="30dp"
         app:itemIconTint="@drawable/item_selector"
