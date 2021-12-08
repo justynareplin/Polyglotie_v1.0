@@ -26,6 +26,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val newMap= HashMap<String, String>()
+        newMap["hello"] = "czesc"
+
         val btnQuiz: Button = findViewById(R.id.btnQuiz)
         val btnFlashCards: Button = findViewById(R.id.btnFlashCards)
         val btnInsertWord: Button = findViewById(R.id.btnInsertWord)

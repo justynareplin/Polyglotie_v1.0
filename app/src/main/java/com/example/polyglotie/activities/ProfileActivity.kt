@@ -27,13 +27,8 @@ class ProfileActivity : AppCompatActivity() {
     private val db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
-
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
-
-
 
         val tv_username: TextView = findViewById(R.id.tv_username)
         val tv_email: TextView = findViewById(R.id.tv_email)
