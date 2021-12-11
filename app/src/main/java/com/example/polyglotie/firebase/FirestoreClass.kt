@@ -24,7 +24,6 @@ class FirestoreClass {
     val user = Firebase.auth.currentUser
 
     fun registerUser(activity: RegistrationActivity, userInfo: com.example.polyglotie.models.User) {
-
         mFireStore.collection(Constants.USERS)
             .document(getCurrentUserId())
             .set(userInfo, SetOptions.merge())
@@ -35,28 +34,22 @@ class FirestoreClass {
             }
     }
 
-    fun signInUser(activity: Activity) {
+    fun loadUserData(activity: Activity) {
         mFireStore.collection(Constants.USERS)
             .document(getCurrentUserId())
             .get()
             .addOnSuccessListener { document ->
                 val loggedInUser =
-                    document.toObject(User::class.java) //val that stores log in user, document gets us this info
-
+                    document.toObject(User::class.java)!! //val that stores log in user, document gets us this info
                 when (activity) {
                     is LoginActivity -> {
-                        if (loggedInUser != null) {
-                            activity.signInSuccess(loggedInUser)
-                            println("signInuser")
-                        }
+                        activity.signInSuccess(loggedInUser)
                     }
                     is ProfileActivity -> {
-                        if (loggedInUser != null) {
-                            activity.updateUserDetails(loggedInUser)
-                        }
+                        activity.setUserDataInUI(loggedInUser)
                     }
                 }
-            }.addOnFailureListener { e ->
+            }.addOnFailureListener {e ->
                 Log.e(activity.javaClass.simpleName, "Error occured")
             }
     }

@@ -21,11 +21,10 @@ import com.example.polyglotie.models.User
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.w3c.dom.Text
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
         val btnQuiz: Button = findViewById(R.id.btnQuiz)
         val btnFlashCards: Button = findViewById(R.id.btnFlashCards)
@@ -43,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
         //  bottomNavigationView.setupWithNavController(navController)
 
-        FirestoreClass().signInUser(this)
+        //FirestoreClass().signInUser(this)
 
         btnFlashCards.setOnClickListener {
             val intent = Intent(this, FlashCardsActivity::class.java)
