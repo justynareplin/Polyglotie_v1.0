@@ -26,12 +26,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val newMap= HashMap<String, String>()
-        newMap["hello"] = "czesc"
 
         val btnQuiz: Button = findViewById(R.id.btnQuiz)
         val btnFlashCards: Button = findViewById(R.id.btnFlashCards)
         val btnInsertWord: Button = findViewById(R.id.btnInsertWord)
+        val btnProfile: Button = findViewById(R.id.btnProfile)
 
         /*Set fragments values */
         /*val homeFragment = HomeFragment()
@@ -42,15 +41,20 @@ class MainActivity : AppCompatActivity() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         val navController = findNavController(R.id.flFragment)
 
-      //  bottomNavigationView.setupWithNavController(navController)
+        //  bottomNavigationView.setupWithNavController(navController)
 
         FirestoreClass().signInUser(this)
 
         btnFlashCards.setOnClickListener {
+            val intent = Intent(this, FlashCardsActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        btnProfile.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
             finish()
-
         }
 /*
         btnInsertWord.setOnClickListener{ supportFragmentManager.beginTransaction().apply{
@@ -70,9 +74,9 @@ class MainActivity : AppCompatActivity() {
         )
 */
         btnQuiz.setOnClickListener {
+            finish()
             val Intent = Intent(this, QuizActivity2::class.java)
             startActivity(Intent)
-            finish()
         }
 
     }

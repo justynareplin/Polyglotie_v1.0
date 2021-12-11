@@ -8,7 +8,9 @@ object DeckData {
     fun getBasicWords():HashMap<String, String>{
         val basicWordsSet= HashMap<String, String>()
         basicWordsSet.put("hello", "czesc")
-        basicWordsSet.put("thanks", "dzieki")
+        basicWordsSet.put("thanks", "dziękuję")
+        basicWordsSet.put("hi", "czesc")
+
         return basicWordsSet
     }
 

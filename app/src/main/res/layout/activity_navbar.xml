@@ -22,7 +22,7 @@
             android:background="@color/purple"
             app:titleMarginStart="40dp"
             app:titleMarginTop="30dp"
-            app:menu="@menu/navbar_menu"/>
+        />
 
     </com.google.android.material.appbar.AppBarLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

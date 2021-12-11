@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.example.polyglotie.R
+import com.example.polyglotie.firebase.FirestoreClass
 import com.example.polyglotie.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -22,10 +23,6 @@ import com.google.firebase.ktx.Firebase
 
 class ProfileActivity : AppCompatActivity() {
 
-    private lateinit var auth: FirebaseAuth
-    private lateinit var databaseReference: DatabaseReference
-    private val db = Firebase.firestore
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
@@ -34,20 +31,12 @@ class ProfileActivity : AppCompatActivity() {
         val tv_email: TextView = findViewById(R.id.tv_email)
         val btnLogOut: Button = findViewById(R.id.btnLogOut)
 
-        var ref = FirebaseDatabase.getInstance().getReference("Users").child(
-            FirebaseAuth.getInstance().currentUser!!.uid
-        )
 
-        auth = FirebaseAuth.getInstance()
-
-        val uid = auth.currentUser?.uid
-        val email = auth.currentUser?.email
-        val name = auth.currentUser?.displayName
+       // val uid = auth.currentUser?.uid
+        val uid =FirestoreClass().getCurrentUserId()
         val user = Firebase.auth.currentUser
-
         if (user != null) {
-            tv_username.text = uid.toString()
-            tv_email.text = email
+            tv_username.text = uid
         }
 
         btnLogOut.setOnClickListener {
@@ -60,7 +49,6 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     fun updateUserDetails(loggedInUser: User) {
-
         val userCircleImage: ImageView = findViewById(R.id.user_circle_image)
 
         Glide

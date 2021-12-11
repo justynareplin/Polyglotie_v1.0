@@ -2,45 +2,43 @@ package com.example.polyglotie.activities
 
 import android.graphics.Color
 import android.graphics.Typeface
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.*
 import androidx.core.content.ContextCompat
 import com.example.polyglotie.R
-import com.example.polyglotie.models.Deck
-import com.example.polyglotie.utils.Constants
 import com.example.polyglotie.utils.DeckData
 import com.example.polyglotie.utils.Questions
+import com.example.polyglotie.utils.Favourites
 
-class QuizActivity2 : AppCompatActivity() {
-
-    private var mSelectedOptionPosition: Int = 0
+class QuizActivity2 : BaseQuizActivities() {
     private var gQuestionsList: ArrayList<Question>? = null //global question list
+    private var mSelectedOptionPosition: Int = 0
     private lateinit var mBasicWordSet: HashMap<String, String>
 
     var questionCurrentPosition = 0
-    var doubleClickedFavourites = 0
+    var btnFavouriteClicks = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz2)
 
-        val textViewQuestion: TextView = findViewById(R.id.textViewQuestion)
         val btnAnswer1: Button = findViewById(R.id.btnAnswer1)
         val btnAnswer2: Button = findViewById(R.id.btnAnswer2)
         val btnAnswer3: Button = findViewById(R.id.btnAnswer3)
         val btnAnswer4: Button = findViewById(R.id.btnAnswer4)
         val btnSubmit: Button = findViewById(R.id.btnSubmit)
-
         val btnFavourites: ImageButton = findViewById(R.id.favourite_button)
+        val backBtn: ImageButton = findViewById(R.id.backBtn)
+
+        val textViewQuestion: TextView = findViewById(R.id.textViewQuestion)
+
+        val tvDeckTitle: TextView = findViewById(R.id.deck_title)
+        val tWordsQuantity: TextView = findViewById(R.id.deck_words_quantity)
+        val tvRating: TextView = findViewById(R.id.tv_rating)
+        val tvYourLevel: TextView = findViewById(R.id.tv_your_level)
 
         gQuestionsList = Questions.getQuestions()
         mBasicWordSet = DeckData.getBasicWords()
-        for ((key, value) in mBasicWordSet) {
-            println("$key= $value")
-        }
-
         fun setQuestions() {
             val question = gQuestionsList!![questionCurrentPosition]
             textViewQuestion.text = question.question
@@ -49,6 +47,9 @@ class QuizActivity2 : AppCompatActivity() {
             btnAnswer3.text = question.optionThree
             btnAnswer4.text = question.optionFour
         }
+
+        setDeckDetails(tvDeckTitle, tWordsQuantity, tvRating, tvYourLevel)
+        // setQuestion(textViewQuestion, gQuestionsList!!, questionCurrentPosition)
 
         fun setDefaultButtonView() {
             val options = ArrayList<Button>()
@@ -96,15 +97,29 @@ class QuizActivity2 : AppCompatActivity() {
         }
 
         btnFavourites.setOnClickListener {
-            doubleClickedFavourites++
-            if (doubleClickedFavourites == 1) {
-                btnFavourites.setImageResource(R.drawable.ic_baseline_favorite)
-            } else if (doubleClickedFavourites == 2) {
-                doubleClickedFavourites = 0
-                btnFavourites.setImageResource(R.drawable.ic_baseline_favorite_border)
+            btnFavouriteClicks++
+            if (btnFavouriteClicks == 1) {
+                /*   val question = gQuestionsList!![questionCurrentPosition]
+                   val questionEnglish = question.question
+                   val questionPolish = question.answer.toString()
+                   Favourites.favouriteWords.put(questionEnglish, questionPolish)*/
+
+                favouriteButtonClicked(btnFavourites)
+            } else if (btnFavouriteClicks == 2) {
+                btnFavouriteClicks = 0
+                favouriteButtonClickedTwice(btnFavourites)
             }
         }
 
+        backBtn.setOnClickListener {
+            setBackBtn(backBtn)
+        }
+        /*
+                println("bleep")
+                for ((key, value) in Favourites.favouriteWords) {
+                    println("$key= $value")
+                }
+        */
         fun wrongAnswer(correctAnswer: Int, mSelectedOptionPosition: Int) {
             when (correctAnswer) {
                 1 -> btnAnswer1.setTextColor(Color.GREEN)

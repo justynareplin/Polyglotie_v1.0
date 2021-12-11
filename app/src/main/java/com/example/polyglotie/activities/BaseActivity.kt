@@ -4,13 +4,15 @@ import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.widget.ImageButton
 import android.widget.Toast
 import com.example.polyglotie.R
 import com.google.firebase.auth.FirebaseAuth
 
 open class BaseActivity : AppCompatActivity() {
 
-    private var doubleBackToExitPressed = false; //if user clicked back button twice, app should close
+    private var doubleBackToExitPressed =
+        false; //if user clicked back button twice, app should close
 
     private lateinit var mProgressDialog: Dialog
 
@@ -18,23 +20,26 @@ open class BaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base)
     }
-    fun showProgressDialog(text:String){
+
+    fun showProgressDialog(text: String) {
         mProgressDialog = Dialog(this)
         mProgressDialog.setContentView(R.layout.dialog_progress)
 
-       // mProgressDialog.tv_progress_text.text = text
+        // mProgressDialog.tv_progress_text.text = text
         mProgressDialog.show()
 
     }
-    fun hideProgressDialog(){
+
+    fun hideProgressDialog() {
         mProgressDialog.dismiss()
     }
-    fun getCurrentUserID(): String{
+
+    fun getCurrentUserID(): String {
         return FirebaseAuth.getInstance().currentUser!!.uid
     }
 
-    fun doubleBackToExit(){
-        if(doubleBackToExitPressed){
+    fun doubleBackToExit() {
+        if (doubleBackToExitPressed) {
             super.onBackPressed()
             return
         }
@@ -45,8 +50,6 @@ open class BaseActivity : AppCompatActivity() {
             Toast.LENGTH_SHORT
         ).show()
 
-        Handler().postDelayed({doubleBackToExitPressed= false}, 2000)
+        Handler().postDelayed({ doubleBackToExitPressed = false }, 2000)
     }
-
-
 }

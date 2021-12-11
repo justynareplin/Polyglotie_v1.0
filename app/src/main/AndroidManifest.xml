@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Polyglotie">
         <activity
+            android:name=".activities.BaseQuizActivities"
+            android:exported="true" />
+        <activity
             android:name=".activities.bottom"
             android:exported="true" />
         <activity
@@ -29,7 +32,8 @@
             android:exported="true" />
         <activity
             android:name=".activities.QuizActivity2"
-            android:exported="true" />
+            android:exported="true"
+                                    />
         <activity
             android:name=".activities.QuizActivity"
             android:exported="true" />
@@ -51,13 +55,11 @@
             android:name=".activities.StartActivity"
             android:exported="true"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
-
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

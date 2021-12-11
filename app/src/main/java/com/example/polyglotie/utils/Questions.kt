@@ -10,9 +10,9 @@ object Questions {
             1,
             "Pytanie nr 1",
             "slowo     1.1 ",
-            "slowo        1.2",
-            "slowo        1.3",
-            "slowo       1.4",
+            "slowo    1.2",
+            "slowo   1.3",
+            "slowo   1.4",
             1)
         questionList.add(que1)
 

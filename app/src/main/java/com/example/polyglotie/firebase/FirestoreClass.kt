@@ -23,7 +23,6 @@ class FirestoreClass {
     val db = Firebase.firestore
     val user = Firebase.auth.currentUser
 
-
     fun registerUser(activity: RegistrationActivity, userInfo: com.example.polyglotie.models.User) {
 
         mFireStore.collection(Constants.USERS)
@@ -37,7 +36,6 @@ class FirestoreClass {
     }
 
     fun signInUser(activity: Activity) {
-        println("test")
         mFireStore.collection(Constants.USERS)
             .document(getCurrentUserId())
             .get()

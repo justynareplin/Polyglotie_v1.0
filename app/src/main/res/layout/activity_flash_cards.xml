@@ -6,6 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".activities.FlashCardsActivity">
 
+    <TextView
+        android:id="@+id/tv_rating"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="64dp"
+        android:textColor="@color/purple"
+        app:layout_constraintBottom_toTopOf="@+id/favourite_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/deck_words_quantity"
+        app:layout_constraintTop_toBottomOf="@+id/deck_rating2"
+        app:layout_constraintVertical_bias="0.227"
+        tools:text="3" />
+
+    <ImageButton
+        android:id="@+id/backBtn"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96"
+        app:srcCompat="?attr/actionModeCloseDrawable"
+        tools:ignore="SpeakableTextPresentCheck" />
+
     <ImageButton
         android:id="@+id/favourite_button"
         style="?android:attr/borderlessButtonStyle"
